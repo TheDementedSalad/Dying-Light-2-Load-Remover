@@ -10,6 +10,7 @@ state("DyingLightGame_x64_rwdi")
 	byte Loading: "engine_x64_rwdi.dll", 0x1FCBB88, 0x1200, 0x8, 0x0, 0x8;
 	byte onlineState: "gamedll_ph_x64_rwdi.dll", 0x2FA3590, 0x10, 0x8, 0x10, 0x218;
 	byte Paused: "engine_x64_rwdi.dll", 0x23A6FF8, 0x78, 0x60;
+	ushort p2HP: "engine_x64_rwdi.dll", 0x22B1B60, 0x78, 0x0, 0xC;
 } 
 
 start {
@@ -19,7 +20,7 @@ start {
 
 isLoading 
 { 
-	return current.Loading == 2 || current.menuCutsStart == 200 || (current.Paused != 0) && current.onlineState == 3 || current.blackScreen == 1;
+	return current.Loading == 2 || current.menuCutsStart == 200 || current.Paused == 1 && current.p2HP == 0 || current.blackScreen == 1;
 }
 
 reset
