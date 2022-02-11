@@ -4,24 +4,22 @@
 
 state("DyingLightGame_x64_rwdi") 
 { 
-	float IGT: "gamedll_ph_x64_rwdi.dll", 0x2EFB4B8, 0x35C;
 	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x322A; 
-	byte cutsIngame: "gamedll_ph_x64_rwdi.dll", 0x02E1AB38, 0xDE0, 0x0, 0x38;
 	float X: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CD4;
-	byte blackScreen: "gamedll_ph_x64_rwdi.dll", 0x2F26680, 0x20, 0xE80;
+	byte blackScreen: "AnimDriver_x64_rwdi.dll", 0x152F38, 0xA88, 0x20, 0x28, 0xE80;
 	byte Loading: "engine_x64_rwdi.dll", 0x1FCBB88, 0x1200, 0x8, 0x0, 0x8;
-	byte onlineState: "gamedll_ph_x64_rwdi.dll", 0x2F9EDD0, 0x10, 0x8, 0x10, 0x218;
-	byte Paused: "engine_x64_rwdi.dll", 0x220C780, 0x2F0, 0x10;
+	byte onlineState: "engine_x64_rwdi.dll", 0x216FAA0, 0x510, 0x538, 0x1DC0, 0x168, 0x218;
+	byte Paused: "engine_x64_rwdi.dll", 0x23A6FF8, 0x78, 0x60;
 } 
 
 start {
 	return current.blackScreen == 0 && old.blackScreen == 1 && current.X >= 590f && current.X <= 595f ||
-		current.cutsIngame == 0 && old.cutsIngame == 1 && current.X >= 590f && current.X <= 595f;
+		current.menuCutsStart == 28 && old.menuCutsStart == 32 && current.X >= 590f && current.X <= 595f;
 }
 
 isLoading 
 { 
-	return current.Loading == 2 || current.menuCutsStart == 200 || (current.Paused == 144 || current.Paused == 200) && current.onlineState == 3 || current.blackScreen == 1;
+	return current.Loading == 2 || current.menuCutsStart == 200 || (current.Paused != 0) && current.onlineState == 3 || current.blackScreen == 1;
 }
 
 reset
