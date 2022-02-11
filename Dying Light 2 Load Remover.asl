@@ -12,14 +12,22 @@ state("DyingLightGame_x64_rwdi")
 	byte Paused: "engine_x64_rwdi.dll", 0x21E3A80, 0x1E8, 0x6C0, 0x88, 0x58;
 } 
 
-start {
+startup
+{
+	settings.Add("prologue", true, "Pilgrim's Path");
+	settings.CurrentDefaultParent = "prologue";
+	settings.Add("c10e050_00", false, "Put Rose to Bed", "prologue");
+}
+
+start 
+{
 	return current.blackScreen == 0 && old.blackScreen == 1 && current.X >= 590f && current.X <= 595f ||
 		current.menuCutsStart == 28 && old.menuCutsStart == 32 && current.X >= 590f && current.X <= 595f;
 }
 
 isLoading 
 { 
-	return current.Loading == 2 || current.menuCutsStart == 200 || current.Paused == 1 && current.onlineState == 0 || current.blackScreen != 0;
+	return current.Loading == 2 || current.menuCutsStart == 200 || current.Paused == 2 && current.onlineState == 0 || current.blackScreen != 0;
 }
 
 reset
@@ -27,4 +35,3 @@ reset
 	return current.blackScreen == 1 && old.blackScreen == 0 && current.X >= 590f && current.X <= 595f && current.menuCutsStart != 200 ||
 		current.Loading == 8 && old.Loading == 2 && current.X >= 620f && current.X <= 621f && current.menuCutsStart != 200;	
 }
-
