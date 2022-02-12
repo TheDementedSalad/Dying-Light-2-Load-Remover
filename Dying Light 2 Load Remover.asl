@@ -20,7 +20,7 @@ start
 
 isLoading 
 { 
-	return current.Loading == 2 || current.menuCutsStart == 200 || current.Paused == 2 && current.onlineState == 0 || current.blackScreen != 0;
+	return current.Loading == 2 || current.menuCutsStart == 200 || current.Paused != 0 && current.onlineState == 0 || current.blackScreen != 0;
 }
 
 reset
@@ -28,4 +28,3 @@ reset
 	return current.blackScreen == 1 && old.blackScreen == 0 && current.X >= 590f && current.X <= 595f && current.menuCutsStart != 200 ||
 		current.Loading == 8 && old.Loading == 2 && current.X >= 620f && current.X <= 621f && current.menuCutsStart != 200;	
 }
-
