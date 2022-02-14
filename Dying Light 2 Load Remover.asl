@@ -21,7 +21,7 @@ start
 
 isLoading 
 { 
-	return current.Loading == 2 || current.menuCutsStart == 200 || current.Paused == 4 || current.Paused != 0 && current.onlineState == 0 || current.blackscreenNew != 158;
+	return current.Loading == 2 || current.menuCutsStart == 200 || current.Paused == 3 || current.Paused != 0 && current.onlineState == 0 || current.blackscreenNew != 158;
 }
 
 reset
