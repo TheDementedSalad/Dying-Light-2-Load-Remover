@@ -9,7 +9,7 @@ state("DyingLightGame_x64_rwdi")
 	byte blackScreen: "AnimDriver_x64_rwdi.dll", 0x152F38, 0xA88, 0x20, 0x28, 0xE80;
 	byte blackscreenNew: "engine_x64_rwdi.dll", 0x23A6DF0, 0x0, 0x1C8, 0x4;
 	byte Loading: "engine_x64_rwdi.dll", 0x1FCBB88, 0x1200, 0x8, 0x0, 0x8;
-	byte onlineState: "engine_x64_rwdi.dll", 0x2120848, 0x1018, 0x30, 0x20, 0x68, 0x40;
+	byte onlineState: "engine_x64_rwdi.dll", 0x21E3EF0, 0x438, 0x30, 0x20, 0x68, 0x40;
 	byte Paused: "engine_x64_rwdi.dll", 0x220C790, 0x2F0, 0x20;
 	byte Paused2: "engine_x64_rwdi.dll", 0x23A6FF8, 0x78, 0x60;
 	byte Paused3: "engine_x64_rwdi.dll", 0x220C790, 0x2F0, 0x1D;
@@ -25,7 +25,7 @@ start
 
 isLoading 
 { 
-	return current.Loading == 2 || current.menuCutsStart == 200 || (current.Options == 1 && current.Paused2 == 1 || current.Options == 2 || 
+	return current.Loading == 2 || current.menuCutsStart == 200 || (current.Options == 1 && current.Paused2 == 1 || current.Options == 2 && current.Options2 == 2 || 
 	current.Options == 3 || current.Paused == 1 || current.Paused3 == 2 || current.Paused == 1 || current.Options2 == 3 && current.Options == 1) && current.onlineState == 0 || 
 	current.blackscreenNew != 158;
 }
