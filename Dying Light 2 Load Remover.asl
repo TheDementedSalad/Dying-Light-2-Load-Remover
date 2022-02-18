@@ -40,7 +40,7 @@ start
 
 isLoading 
 { 
-  return current.Loading == 2 || current.menuCutsStart != 32 && current.menuCutsStart != 28 || current.menuState == 8 && current.Shop == 0 || current.blackscreenNew != 158;
+  return current.Loading == 2 || current.menuCutsStart != 32 && current.menuCutsStart != 28 || current.menuState == 8 && current.Shop == 0 && current.onlineState == 0 || current.blackscreenNew != 158;
 }
 
 //Keeping this here just for now in case
