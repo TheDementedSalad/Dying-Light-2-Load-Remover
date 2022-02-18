@@ -4,21 +4,6 @@
 
 state("DyingLightGame_x64_rwdi") 
 { 
-	//Keeping this here just for now in case
-	/*
-	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x322A; 
-	float X: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CD4;
-	byte blackScreen: "AnimDriver_x64_rwdi.dll", 0x152F38, 0xA88, 0x20, 0x28, 0xE80;
-	byte blackscreenNew: "engine_x64_rwdi.dll", 0x23A6DF0, 0x0, 0x1C8, 0x4;
-	byte Loading: "engine_x64_rwdi.dll", 0x1FCBB88, 0x1200, 0x8, 0x0, 0x8;
-	byte onlineState: "engine_x64_rwdi.dll", 0x21E3EF0, 0x438, 0x30, 0x20, 0x68, 0x40;
-	byte Paused: "engine_x64_rwdi.dll", 0x220C790, 0x2F0, 0x20;
-	byte Paused2: "engine_x64_rwdi.dll", 0x23A6FF8, 0x78, 0x60;
-	byte Paused3: "engine_x64_rwdi.dll", 0x220C790, 0x2F0, 0x1D;
-	byte Options: "engine_x64_rwdi.dll", 0x21E3A80, 0x1E8, 0x6C0, 0x88, 0x78;
-	byte Options2: "engine_x64_rwdi.dll", 0x21E3A80, 0x1E8, 0x6C0, 0x88, 0x58;
-	*/
-	
 	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x322A; 
 	float X: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CD4;
 	byte blackScreen: "AnimDriver_x64_rwdi.dll", 0x152F38, 0xA88, 0x20, 0x28, 0xE80;
@@ -33,26 +18,14 @@ state("DyingLightGame_x64_rwdi")
 
 start 
 {
-	return current.blackscreenNew == 0 && old.blackScreen == 1 && current.X >= 590f && current.X <= 595f ||
+	return current.blackScreen == 0 && old.blackScreen == 1 && current.X >= 590f && current.X <= 595f ||
 		current.menuCutsStart == 28 && old.menuCutsStart == 32 && current.X >= 590f && current.X <= 595f;
 }
 
-
 isLoading 
 { 
-  return current.Loading == 2 || current.menuCutsStart != 32 && current.menuCutsStart != 28 || current.menuState == 8 && current.Shop == 0 && current.onlineState == 0 || current.blackscreenNew != 158;
+  return current.Loading == 2 || current.menuCutsStart != 32 && current.menuCutsStart != 28 || current.menuState == 8 && current.Shop == 0 || current.blackscreenNew != 158;
 }
-
-//Keeping this here just for now in case
-/*
-isLoading 
-{ 
-	return current.Loading == 2 || current.menuCutsStart != 32 && current.menuCutsStart != 28 || (current.Options == 1 && current.Paused2 == 1 || 
-	current.Options == 2 && current.Options2 == 2 || current.Options == 3 || current.Paused == 1 && current.Options2 != 5 && current.Options2 != 4 && current.Paused2 != 0 ||
-	current.Paused == 2 && current.Paused3 == 2 || current.Paused == 1 && current.Paused3 == 2) && current.onlineState == 0 || 
-	current.blackscreenNew != 158;
-}
-*/
 
 reset
 {
