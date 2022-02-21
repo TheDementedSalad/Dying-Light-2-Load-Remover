@@ -56,11 +56,9 @@ split
 	6719777300904351619,6725682675157433682,6786968470164355614,6984683066173098584,6984684398903732155,6786968762091325234,6780320947725019186,6779627417734707475,6949121008916742189,6834786033552599748,
 	6834785611998958730,6834785784551759023,6725778646519233855,6986239164504225373,6838984222336485600,6986219797990958667,6838983985811921869,6985511174689733775,6737236222943582532,6796674366368284542};
 	
-	if(current.QuestID != old.QuestID && vars.questStorage.Contains(current.QuestID) && current.QuestID != 6418103557892807278){
-			if(vars.questStorage.Contains(current.QuestID) && !vars.completedSplits.Contains(current.QuestID)){
-			vars.completedSplits.Add(current.QuestID);
-			return true;
-		}
+	if(current.QuestID != old.QuestID && vars.questStorage.Contains(current.QuestID) && !vars.completedSplits.Contains(current.QuestID) && current.QuestID != 6418103557892807278){
+		vars.completedSplits.Add(current.QuestID);
+		return true;
 	}
 	
 	return current.QuestID == 6796674366368284542 && current.menuCutsStart == 32 && current.X >=2551f && current.X <=2552f && current.Y >= 7f && current.Y <= 8f && current.Z >= -687f && current.Z <= -685;
