@@ -335,6 +335,9 @@ update
     }
 	
 	if (old.QuestID != current.QuestID) print(">>>>> level changed from " + old.QuestID + " to " + current.QuestID);
+	if (old.X != current.X) print(">>>>> X changed from " + old.X + " to " + current.X);
+	if (old.Y != current.Y) print(">>>>> Y changed from " + old.Y + " to " + current.Y);
+	if (old.Z != current.Z) print(">>>>> Z changed from " + old.Z + " to " + current.Z);
 }
 
 start 
@@ -391,7 +394,7 @@ split
 			}
 	}
 	
-	if(old.X == 0f && current.X >= 1120f && current.X <= 1126f && old.Y == 0f && current.Y >= -15f && current.Y <= -12f && old.Z == 0f && current.Z >= -229f && current.Z <= -225f){
+	if(current.X >= 1122f && current.X <= 1125f && current.Y >= -15f && current.Y <= -12f && current.Z >= -229f && current.Z <= -225f){
 		if (settings["FishFin"] && !vars.completedSplits.Contains("FishFin")){
 				vars.completedSplits.Add("FishFin");
 				return true;
@@ -405,7 +408,7 @@ split
 			}
 	}
 	
-	if(old.X == 0f && current.X >= 1400f && current.X <= 1420f && old.Y == 0f && current.Y >= 30f && current.Y <= 40f && old.Z == 0f && current.Z >= -565f && current.Z <= -550f){
+	if(current.X >= 1409f && current.X <= 1411f && current.Y >= 33f && current.Y <= 45f && current.Z >= -560f && current.Z <= -556f){
 		if (settings["Elec2fin"] && !vars.completedSplits.Contains("Elec2fin")){
 				vars.completedSplits.Add("Elec2fin");
 				return true;
@@ -419,14 +422,14 @@ split
 			}
 	}
 	
-	if(current.X >= 1589f && current.X <= 1592 && current.Y >= 3f && current.Y <= 4f && current.Z >= -403f && current.Z <= -398){
+	if(current.X >= 1589f && current.X <= 1592 && current.Y >= 3f && current.Y <= 8f && current.Z >= -403f && current.Z <= -398){
 		if (settings["MetroEnt"] && !vars.completedSplits.Contains("MetroEnt")){
 				vars.completedSplits.Add("MetroEnt");
 				return true;
 			}
 	}
 	
-	if(old.X == 0f && current.X >= 1642f && current.X <= 1446f && old.Y == 0f && current.Y >= -10f && current.Y <= -7f && old.Z == 0f && current.Z >= -422f && current.Z <= -417f){
+	if(current.X >= 1643f && current.X <= 1645f && current.Y >= -9f && current.Y <= -8f && current.Z >= -420f && current.Z <= -418f){
 		if (settings["MetroFin"] && !vars.completedSplits.Contains("MetroFin")){
 				vars.completedSplits.Add("MetroFin");
 				return true;
