@@ -333,11 +333,6 @@ update
     {
         vars.completedSplits.Clear();
     }
-	
-	if (old.QuestID != current.QuestID) print(">>>>> level changed from " + old.QuestID + " to " + current.QuestID);
-	if (old.X != current.X) print(">>>>> X changed from " + old.X + " to " + current.X);
-	if (old.Y != current.Y) print(">>>>> Y changed from " + old.Y + " to " + current.Y);
-	if (old.Z != current.Z) print(">>>>> Z changed from " + old.Z + " to " + current.Z);
 }
 
 start 
