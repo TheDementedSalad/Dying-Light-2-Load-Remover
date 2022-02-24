@@ -4,7 +4,7 @@
 // Quest ID found by Ero (Huge Thanks o7)
 
 //Special thanks to SpiceeTV, 7rayD and AvuKamu for being my lab rats and testing
-//Thanks to Mysertion for helping me throughout the creation of the splitter
+//Thanks to Mysterion for helping me throughout the creation of the splitter
 
 state("DyingLightGame_x64_rwdi") 
 { 
@@ -35,7 +35,6 @@ startup
 	settings.Add("6950633928245030047", false, "Open the Double Doors", "Pilgrim");
 	settings.Add("6950635249820691247", false, "Look at the Picture", "Pilgrim");
 	settings.Add("6935737825684148760", false, "Have a Drink With Spike", "Pilgrim");
-	settings.Add("6963636369202041855", false, "Exit Through Gate", "Pilgrim");
 	settings.Add("6959503313781553921", false, "Eugh, Biters", "Pilgrim");
 	settings.Add("MistyPark", false, "Bottom of Misty Mountain Climb", "Pilgrim");
 	settings.Add("6956496709085682889", false, "Reach The Motel", "Pilgrim");
@@ -113,7 +112,6 @@ startup
 	settings.Add("6929792385176768080", false, "Talk to Sophie and Barney", "Raid");
 	settings.Add("6867085135245014083", false, "Spy on Bandit Camp", "Raid");
 	settings.Add("6891232327643746418", false, "Raid Start", "Raid");
-	settings.Add("CapCamp", false, "Capture Bandit Camp", "Raid");
 	settings.Add("6846321662880425607", false, "Free Carl", "Raid");
 	settings.Add("6929794707812379180", false, "Go to Aitor or Sophie", "Raid");
 	settings.Add("6524327801237491574", false, "THE RAID END", "Raid");
@@ -167,7 +165,6 @@ startup
 	settings.Add("6930914209333513828", false, "Start Paraglider 3 Tutorial", "Home");
 	settings.Add("6937993453530942671", false, "Finish Paraglider Tutorial", "Home");
 	settings.Add("6940231143339199498", false, "Can This Paraglider Be Faster?", "Home");
-	settings.Add("6940232596084183534", false, "Nightrunners Favourite Toy", "Home");
 	settings.Add("6854112312749174543", false, "Begin Combat With Renegades", "Home");
 	settings.Add("6854126562269066615", false, "Finish Combat With Renegades", "Home");
 	settings.Add("6854802964507014265", false, "Enter Downtown Electrical Station", "Home");
@@ -218,7 +215,7 @@ startup
 	settings.Add("6937252112211993570", false, "Go to Lawans", "Welcome");
 	settings.Add("ArtAp", false, "Enter Art Dealers Apartment", "Welcome");
 	settings.Add("6937212576892709177", false, "Find Art Dealers Body", "Welcome");
-	settings.Add("6786968762091325234", false, "WELCOME ON BOARD END", "Welcome");
+	settings.Add("BoardEnd", false, "WELCOME ON BOARD END", "Welcome");
 	
 	settings.Add("Light", true, "The Lost Light");
 	settings.Add("6943247357780964709", false, "Finish Wrecking Ball", "Light");
@@ -375,13 +372,6 @@ split
 			}
 	}
 	
-	if(current.QuestID == 6764266303857422847 && old.X == 0f && current.X >= 1700f && current.X <= 1703f && old.Y == 0f && current.Y >= 55f && current.Y <= 56f && old.Z == 0f && current.Z >= 1119f && current.Z <= 1122f){
-		if (settings["CapCamp"] && !vars.completedSplits.Contains("CapCamp")){
-				vars.completedSplits.Add("CapCamp");
-				return true;
-			}
-	}
-	
 	if(current.X >= 1134f && current.X <= 1135f && current.Y >= 6f && current.Y <= 8f && current.Z >= -152f && current.Z <= -151f){
 		if (settings["FishStart"] && !vars.completedSplits.Contains("FishStart")){
 				vars.completedSplits.Add("FishStart");
@@ -427,6 +417,14 @@ split
 	if(current.X >= 1643f && current.X <= 1645f && current.Y >= -9f && current.Y <= -8f && current.Z >= -420f && current.Z <= -418f){
 		if (settings["MetroFin"] && !vars.completedSplits.Contains("MetroFin")){
 				vars.completedSplits.Add("MetroFin");
+				return true;
+			}
+	}
+	
+	
+	if(current.DialogueID != old.DialogueID && old.DialogueID == 6826694838800894058){
+		if (settings["BoardEnd"] && !vars.completedSplits.Contains("BoardEnd")){
+				vars.completedSplits.Add("BoardEnd");
 				return true;
 			}
 	}
