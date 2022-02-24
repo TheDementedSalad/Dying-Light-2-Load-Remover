@@ -121,11 +121,8 @@ startup
 	settings.Add("6989956221651356487", false, "Reach Base of Water Tower", "Water");
 	settings.Add("6989961015349673951", false, "Remove Final Bomb", "Water");
 	settings.Add("6751648762721161857", false, "Meet Joe and Jack", "Water");
-	settings.Add("6929803722500973811", false, "Water Tower Choice", "Water");
-	settings.Add("PK", true, "Give PK's Water Tower", "Water");
-	settings.Add("6929815864164397451", false, "Arrest Barney", "PK");
-	settings.Add("Surv", true, "Give Survivors Water Tower", "Water");
-	settings.Add("TBD", false, "Sophie Helps Barney", "Surv");
+	settings.Add("6929803722500973811", false, "Give Water Tower to PK's", "Water");
+	settings.Add("6929815864164397451", false, "Arrest Barney", "Water");
 	settings.Add("6719774613488049961", false, "WATER TOWER END", "Water");
 	
 	settings.Add("Dark", true, "Into The Dark");
