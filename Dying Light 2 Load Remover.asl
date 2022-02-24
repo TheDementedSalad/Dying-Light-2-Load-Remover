@@ -333,6 +333,11 @@ update
     {
         vars.completedSplits.Clear();
     }
+	
+	if (old.QuestID != current.QuestID) print(">>>>> level changed from " + old.QuestID + " to " + current.QuestID);
+	if (old.X != current.X) print(">>>>> X changed from " + old.X + " to " + current.X);
+	if (old.Y != current.Y) print(">>>>> Y changed from " + old.Y + " to " + current.Y);
+	if (old.Z != current.Z) print(">>>>> Z changed from " + old.Z + " to " + current.Z);
 }
 
 start 
@@ -431,7 +436,7 @@ split
 			}
 	}
 	
-	if((current.QuestID == 6834785784551759023 || current.QuestID == 6828185347042959778) && current.QuestID != old.QuestID){
+	if(current.DialogueID != old.DialogueID && old.DialogueID == 6949078716470775332){
 		if (settings["ShoeEnd"] && !vars.completedSplits.Contains("ShoeEnd")){
 				vars.completedSplits.Add("ShoeEnd");
 				return true;
