@@ -199,7 +199,7 @@ startup
 	
 	settings.Add("Orders", true, "Orders");
 	settings.Add("6934673331842599385", false, "Speak To Lawan", "Orders");
-	settings.Add("6786989399222930648", false, "Speak To Gradyium", "Orders");
+	settings.Add("6786989399222930648", false, "Speak To Grady", "Orders");
 	settings.Add("6786994287055120365", false, "Speak To Mateo 1", "Orders");
 	settings.Add("6934700140794436804", false, "Speak To Mateo 2", "Orders");
 	settings.Add("6934709451601583510", false, "Find Rowe", "Orders");
@@ -333,11 +333,6 @@ update
     {
         vars.completedSplits.Clear();
     }
-	
-	if (old.QuestID != current.QuestID) print(">>>>> level changed from " + old.QuestID + " to " + current.QuestID);
-	if (old.X != current.X) print(">>>>> X changed from " + old.X + " to " + current.X);
-	if (old.Y != current.Y) print(">>>>> Y changed from " + old.Y + " to " + current.Y);
-	if (old.Z != current.Z) print(">>>>> Z changed from " + old.Z + " to " + current.Z);
 }
 
 start 
