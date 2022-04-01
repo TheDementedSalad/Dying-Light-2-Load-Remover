@@ -1,4 +1,4 @@
-// Dying Light 2 Autosplitter v1.1.0 (21/02/2022)
+// Dying Light 2 Autosplitter v1.2.0 (01/04/2022)
 // Removes load times from loading screens, main menu and when the game is paused on single player
 // Main Script & Pointers by TheDementedSalad
 // Quest ID found by Ero (Huge Thanks o7)
@@ -6,23 +6,32 @@
 //Special thanks to SpiceeTV, 7rayD and AvuKamu for being my lab rats and testing
 //Thanks to Mysterion for helping me throughout the creation of the splitter
 
-state("DyingLightGame_x64_rwdi") 
+state("DyingLightGame_x64_rwdi", "1.0.5-1.0.6") 
 { 
-
 	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x322A; 
 	float X: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CD4;
 	float Y: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CD8;
 	float Z: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CDC;
-	byte blackScreen: "AnimDriver_x64_rwdi.dll", 0x152F38, 0xA88, 0x20, 0x28, 0xE80;
-	byte blackscreenNew: "engine_x64_rwdi.dll", 0x23A6DF0, 0x0, 0x1C8, 0x4;
-	byte Loading: "engine_x64_rwdi.dll", 0x1FCBB88, 0x1200, 0x8, 0x0, 0x8;
-	byte onlineState: "engine_x64_rwdi.dll", 0x21E3EF0, 0x438, 0x30, 0x20, 0x68, 0x40;
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x254E7A0, 0x0, 0x1C8, 0x4;
+	byte Loading: "engine_x64_rwdi.dll", 0x2163B28, 0x1200, 0x8, 0x0, 0x8;
 	byte menuState: "engine_x64_rwdi.dll", 0x21E3A80, 0x880;
 	byte Shop: "engine_x64_rwdi.dll", 0x21E3A80, 0x88C;
 	long QuestID: "engine_x64_rwdi.dll", 0x220C798, 0x7A0, 0x280, 0x40, 0x8, 0x8;
 	long DialogueID: "engine_x64_rwdi.dll", 0x21E3A80, 0xD00, 0x20, 0x8;
-	
-	
+} 
+
+state("DyingLightGame_x64_rwdi", "1.2.0-1.2.1") 
+{ 
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x215BAC8, 0x750, 0x18, 0x3256; 
+	float X: "engine_x64_rwdi.dll", 0x215BAC8, 0x750, 0x18, 0x2CFC;
+	float Y: "engine_x64_rwdi.dll", 0x215BAC8, 0x750, 0x18, 0x2D00;
+	float Z: "engine_x64_rwdi.dll", 0x215BAC8, 0x750, 0x18, 0x2D04;
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x254E7A0, 0x0, 0x1D8, 0x4;
+	byte Loading: "engine_x64_rwdi.dll", 0x1FCBB88, 0x1200, 0x8, 0x0, 0x8;
+	byte menuState: "engine_x64_rwdi.dll", 0x238B1E0, 0x890;
+	byte Shop: "engine_x64_rwdi.dll", 0x238B1E0, 0x89C;
+	long QuestID: "engine_x64_rwdi.dll", 0x23B4428, 0x7B0, 0x280, 0x40, 0x8, 0x8;
+	long DialogueID: "engine_x64_rwdi.dll", 0x238B1E0, 0xD10, 0x20, 0x8;
 } 
 
 startup
@@ -319,6 +328,16 @@ startup
 init
 {
 	vars.completedSplits = new List<string>();
+	
+	int gmSize = modules.First().ModuleMemorySize;
+	switch (gmSize) {
+		case 1998848:
+			version = "1.0.5-1.0.6";
+			break;
+		case 2011136:
+			version = "1.2.0-1.2.1";
+			break;
+	}
 }
 
 update
@@ -331,13 +350,12 @@ update
 
 start 
 {
-	return current.blackScreen == 0 && old.blackScreen == 1 && current.X >= 590f && current.X <= 595f ||
-		current.menuCutsStart == 28 && old.menuCutsStart == 32 && current.X >= 590f && current.X <= 595f;
+	return current.blackscreenNew == 158 && current.menuCutsStart == 28 && current.X >= 590f && current.X <= 595f;
 }
 
 isLoading 
 { 
-  return current.Loading == 2 || current.menuCutsStart != 32 && current.menuCutsStart != 28 || current.menuState == 8 && current.Shop == 0 || current.blackscreenNew != 158;
+	return current.Loading == 2 || current.menuCutsStart != 32 && current.menuCutsStart != 28 || current.menuState == 8 && current.Shop == 0 || current.blackscreenNew != 158 || current.menuState == 10;
 }
 
 split
@@ -464,6 +482,6 @@ split
 
 reset
 {
-	return current.blackScreen == 1 && old.blackScreen == 0 && current.X >= 590f && current.X <= 595f && current.menuCutsStart != 200 ||
+	return current.blackscreenNew == 158 && old.blackscreenNew == 65 && current.menuState != 10 && current.X >= 590f && current.X <= 595f && current.menuCutsStart != 200 ||
 		current.Loading == 8 && old.Loading == 2 && current.X >= 620f && current.X <= 621f && current.menuCutsStart != 200;	
 }
