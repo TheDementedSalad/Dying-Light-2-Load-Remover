@@ -1,4 +1,4 @@
-// Dying Light 2 Autosplitter v1.2.0 (01/04/2022)
+// Dying Light 2 Autosplitter v1.3.0 (11/05/2022)
 // Removes load times from loading screens, main menu and when the game is paused on single player
 // Main Script & Pointers by TheDementedSalad
 // Quest ID found by Ero (Huge Thanks o7)
@@ -32,6 +32,20 @@ state("DyingLightGame_x64_rwdi", "1.2.0-1.2.1")
 	byte Shop: "engine_x64_rwdi.dll", 0x238B1E0, 0x89C;
 	long QuestID: "engine_x64_rwdi.dll", 0x23B4428, 0x7B0, 0x280, 0x40, 0x8, 0x8;
 	long DialogueID: "engine_x64_rwdi.dll", 0x238B1E0, 0xD10, 0x20, 0x8;
+} 
+
+state("DyingLightGame_x64_rwdi", "1.3.0") 
+{ 
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1DB11F8, 0x720, 0x30, 0x3262; 
+	float X: "engine_x64_rwdi.dll", 0x1DB11F8, 0x720, 0x30, 0x2D08; 
+	float Y: "engine_x64_rwdi.dll", 0x1DB11F8, 0x720, 0x30, 0x2D0C; 
+	float Z: "engine_x64_rwdi.dll", 0x1DB11F8, 0x720, 0x30, 0x2D10; 
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x2191420, 0x0, 0x1D8, 0x4;
+	byte Loading: "engine_x64_rwdi.dll", 0x1DB9258, 0x1200, 0x8, 0x0, 0x8;
+	byte menuState: "engine_x64_rwdi.dll", 0x1FF9038, 0x908;
+	byte Shop: "engine_x64_rwdi.dll", 0x238B1E0, 0x914;
+	long QuestID: "engine_x64_rwdi.dll", 0x1FD4CF8, 0x828, 0x280, 0x40, 0x8, 0x8;
+	long DialogueID: "engine_x64_rwdi.dll", 0x1FD4CF8, 0xD88, 0x20, 0x8;
 } 
 
 startup
@@ -336,6 +350,9 @@ init
 			break;
 		case 2011136:
 			version = "1.2.0-1.2.1";
+			break;
+		case 2019328:
+			version = "1.3.0";
 			break;
 	}
 }
