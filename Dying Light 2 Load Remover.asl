@@ -1,4 +1,4 @@
-// Dying Light 2 Autosplitter v1.3.0 (11/05/2022)
+// Dying Light 2 Autosplitter v1.4.0 (15/06/2022)
 // Removes load times from loading screens, main menu and when the game is paused on single player
 // Main Script & Pointers by TheDementedSalad
 // Quest ID found by Ero (Huge Thanks o7)
@@ -43,9 +43,23 @@ state("DyingLightGame_x64_rwdi", "1.3.0")
 	byte blackscreenNew: "engine_x64_rwdi.dll", 0x2191420, 0x0, 0x1D8, 0x4;
 	byte Loading: "engine_x64_rwdi.dll", 0x1DB9258, 0x1200, 0x8, 0x0, 0x8;
 	byte menuState: "engine_x64_rwdi.dll", 0x1FF9038, 0x908;
-	byte Shop: "engine_x64_rwdi.dll", 0x238B1E0, 0x914;
+	byte Shop: "engine_x64_rwdi.dll", 0x1FF9038, 0x914;
 	long QuestID: "engine_x64_rwdi.dll", 0x1FD4CF8, 0x828, 0x280, 0x40, 0x8, 0x8;
 	long DialogueID: "engine_x64_rwdi.dll", 0x1FD4CF8, 0xD88, 0x20, 0x8;
+} 
+
+state("DyingLightGame_x64_rwdi", "1.4.0") 
+{ 
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x328E; 
+	float X: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x2D30; 
+	float Y: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x2D34; 
+	float Z: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x2D38; 
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x218D2D0, 0x0, 0x1D8, 0x4;
+	byte Loading: "engine_x64_rwdi.dll", 0x1DB80B8, 0x1200, 0x8, 0x0, 0x8;
+	byte menuState: "engine_x64_rwdi.dll", 0x1FD0B80, 0x918;
+	byte Shop: "engine_x64_rwdi.dll", 0x1FD0B80, 0x924;
+	long QuestID: "engine_x64_rwdi.dll", 0x1FD0B80, 0x838, 0x280, 0x40, 0x8, 0x8;
+	long DialogueID: "engine_x64_rwdi.dll", 0x1FD0B80, 0xD98, 0x20, 0x8;
 } 
 
 startup
@@ -355,6 +369,15 @@ init
 			version = "1.3.0";
 			break;
 	}
+	
+	string MD5Hash;
+  using (var md5 = System.Security.Cryptography.MD5.Create())
+        using (var s = File.Open(modules.First().FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            MD5Hash = md5.ComputeHash(s).Select(x => x.ToString("X2")).Aggregate((a, b) => a + b);
+    print("MD5Hash: " + MD5Hash);
+        switch (MD5Hash) {
+        case "F2EDA3ECBE34A63A854017ECE2A44738": version = "1.4.0"; break;
+    }
 }
 
 update
