@@ -64,6 +64,13 @@ state("DyingLightGame_x64_rwdi", "1.4.0")
 
 startup
 {
+	settings.Add("Category", true, "NG or NG+");
+	settings.Add("NG", false, "New Game", "Category");
+	settings.Add("NG+", false, "New Game Plus", "Category");
+	
+
+	settings.Add("Splits", true, "List of Splits");
+	settings.CurrentDefaultParent = "Splits";
 	settings.Add("Pilgrim", true, "Pilgrim's Path");
 	settings.Add("6935736438940396261", false, "Spike Catches You", "Pilgrim");
 	settings.Add("6955779402475474343", false, "Did Spike Skip His Lines?", "Pilgrim");
@@ -351,6 +358,7 @@ startup
 	settings.Add("6963250046542176073", false, "Begin Waltz 4", "X13");
 	settings.Add("6994758198199493876", false, "Beat Waltz", "X13");
 	settings.Add("6963532338237599348", false, "Save Mia", "X13");
+	settings.CurrentDefaultParent = null;
 }
 
 init
@@ -367,17 +375,9 @@ init
 			break;
 		case 2019328:
 			version = "1.3.0";
+			version = "1.4.0";
 			break;
 	}
-	
-	string MD5Hash;
-  using (var md5 = System.Security.Cryptography.MD5.Create())
-        using (var s = File.Open(modules.First().FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            MD5Hash = md5.ComputeHash(s).Select(x => x.ToString("X2")).Aggregate((a, b) => a + b);
-    print("MD5Hash: " + MD5Hash);
-        switch (MD5Hash) {
-        case "F2EDA3ECBE34A63A854017ECE2A44738": version = "1.4.0"; break;
-    }
 }
 
 update
@@ -390,7 +390,13 @@ update
 
 start 
 {
+	if(settings ["NG"]){
 	return current.blackscreenNew == 158 && current.menuCutsStart == 28 && current.X >= 590f && current.X <= 595f;
+	}
+	
+	if(settings ["NG+"]){
+	return current.blackscreenNew == 158 && current.menuCutsStart == 28 && current.X >= 2112f && current.X <= 2114f;
+	}
 }
 
 isLoading 
@@ -522,6 +528,12 @@ split
 
 reset
 {
+	if(settings ["NG"]){
 	return current.blackscreenNew == 158 && old.blackscreenNew == 65 && current.menuState != 10 && current.X >= 590f && current.X <= 595f && current.menuCutsStart != 200 ||
 		current.Loading == 8 && old.Loading == 2 && current.X >= 620f && current.X <= 621f && current.menuCutsStart != 200;	
+	}
+	
+	if(settings ["NG+"]){
+	return current.blackscreenNew == 158 && old.blackscreenNew == 65 && current.menuState != 10 && current.X >= 2112f && current.X <= 2114f && current.menuCutsStart != 200;	
+	}
 }
