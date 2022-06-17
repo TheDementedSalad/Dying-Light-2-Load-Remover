@@ -395,7 +395,7 @@ start
 	}
 	
 	if(settings ["NG+"]){
-	return current.blackscreenNew == 158 && current.menuCutsStart == 28 && current.X >= 2112f && current.X <= 2114f;
+	return current.menuState == 6 && old.Shop == 44 && current.X >= 2112f && current.X <= 2114f;
 	}
 }
 
@@ -416,6 +416,7 @@ split
 		}
 	}
 	
+	if(settings ["NG"]){
 	if (current.QuestID != old.QuestID)
 	{
 		vars.QuestString = current.QuestID.ToString();
@@ -424,6 +425,19 @@ split
 			vars.completedSplits.Add(vars.QuestString);
 			return true;
 		}
+	}
+	}
+	
+	if(settings ["NG+"]){
+	if (current.QuestID != old.QuestID && current.QuestID != 6586995861741614531 && current.QuestID != 6586995861741614531 && current.QuestID != 6586997102680853885)
+	{
+		vars.QuestString = current.QuestID.ToString();
+		if (settings[vars.QuestString] && !vars.completedSplits.Contains(vars.QuestString))
+		{
+			vars.completedSplits.Add(vars.QuestString);
+			return true;
+		}
+	}
 	}
 	
 	if(current.QuestID == 6418103557892807278 && current.X >= 308f && current.X <= 311f && current.Y >= 19f && current.Y <= 25f && current.Z >= 1348f && current.Z <= 1373f){
@@ -534,6 +548,6 @@ reset
 	}
 	
 	if(settings ["NG+"]){
-	return current.blackscreenNew == 158 && old.blackscreenNew == 65 && current.menuState != 10 && current.X >= 2112f && current.X <= 2114f && current.menuCutsStart != 200;	
+	return current.menuState == 8 && old.Shop == 44 && current.X >= 2112f && current.X <= 2114f;	
 	}
 }
