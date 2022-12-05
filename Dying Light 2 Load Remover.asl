@@ -1,4 +1,4 @@
-// Dying Light 2 Autosplitter v1.4.0 (15/06/2022)
+// Dying Light 2 Autosplitter v1.5.0 (05/12/2022)
 // Removes load times from loading screens, main menu and when the game is paused on single player
 // Main Script & Pointers by TheDementedSalad
 // Quest ID found by Ero (Huge Thanks o7)
@@ -12,7 +12,7 @@ state("DyingLightGame_x64_rwdi", "1.0.5-1.0.6")
 	float X: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CD4;
 	float Y: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CD8;
 	float Z: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CDC;
-	byte blackscreenNew: "engine_x64_rwdi.dll", 0x254E7A0, 0x0, 0x1C8, 0x4;
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x23A6DF0, 0x0, 0x1C8, 0x4;
 	byte Loading: "engine_x64_rwdi.dll", 0x2163B28, 0x1200, 0x8, 0x0, 0x8;
 	byte menuState: "engine_x64_rwdi.dll", 0x21E3A80, 0x880;
 	byte Shop: "engine_x64_rwdi.dll", 0x21E3A80, 0x88C;
