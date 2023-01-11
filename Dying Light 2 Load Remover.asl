@@ -1,4 +1,4 @@
-// Dying Light 2 Autosplitter v1.5.0 (05/12/2022)
+// Dying Light 2 Autosplitter v1.5.0 (11/01/2023)
 // Removes load times from loading screens, main menu and when the game is paused on single player
 // Main Script & Pointers by TheDementedSalad
 // Quest ID found by Ero (Huge Thanks o7)
@@ -8,7 +8,7 @@
 
 state("DyingLightGame_x64_rwdi", "1.0.5-1.0.6") 
 { 
-	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x322A; 
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x322A;
 	float X: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CD4;
 	float Y: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CD8;
 	float Z: "engine_x64_rwdi.dll", 0x1FC3B28, 0x750, 0x18, 0x2CDC;
@@ -62,8 +62,24 @@ state("DyingLightGame_x64_rwdi", "1.4.0")
 	long DialogueID: "engine_x64_rwdi.dll", 0x1FD0B80, 0xD98, 0x20, 0x8;
 } 
 
+state("DyingLightGame_x64_rwdi", "1.8.3") 
+{ 
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x32C6; 		//200 menu, 28 in game, 32 cutscene
+	float X: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x2D24; 				//find ^ and then go to around 2D24 on final offset and look around as float
+	float Y: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x2D28; 				//""
+	float Z: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x2D2C; 				//""
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x21E5E30, 0x0, 0x208, 0x4;			//158 no blackscreen, 65 blackscreen
+	byte Loading: "engine_x64_rwdi.dll", 0x203BC10, 0x1200, 0x8, 0x0, 0x8;			//2 in loading screen, 8 no loading
+	byte menuState: "engine_x64_rwdi.dll", 0x2027CA0, 0x910;						//6 in game, 8 in main menu/shop. Sometimes goes to 7 when loading shop
+	byte Shop: "engine_x64_rwdi.dll", 0x2027CA0, 0x91C;								//find menuState then look nearby for 0 in game
+	long QuestID: "engine_x64_rwdi.dll", 0x2027CA0, 0x838, 0x280, 0x40, 0x8, 0x8;   //same base address as Shop & same offsets
+	long DialogueID: "engine_x64_rwdi.dll", 0x2027CA0, 0xF28, 0x20, 0x8;			//6935734554263853647 at the beginning when it says 2036, then search for 6935736001417070820 when character is on screen running
+} 
+
 startup
 {
+	vars.ASLVersion = "ASL Version 1.5.0 - 11/01/23";
+	settings.Add(vars.ASLVersion, false);
 	settings.Add("Category", true, "NG or NG+");
 	settings.Add("NG", false, "New Game", "Category");
 	settings.Add("NG+", false, "New Game Plus", "Category");
@@ -377,11 +393,16 @@ init
 			version = "1.3.0";
 			version = "1.4.0";
 			break;
+		case 2076672:
+			version = "1.8.3";
+			break;
 	}
 }
 
 update
 {
+	print(modules.First().ModuleMemorySize.ToString());
+	
     if (timer.CurrentPhase == TimerPhase.NotRunning)
     {
         vars.completedSplits.Clear();
