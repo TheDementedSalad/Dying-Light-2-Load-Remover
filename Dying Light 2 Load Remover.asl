@@ -64,10 +64,10 @@ state("DyingLightGame_x64_rwdi", "1.4.0")
 
 state("DyingLightGame_x64_rwdi", "1.8.3") 
 { 
-	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x32C6; 		//200 menu, 28 in game, 32 cutscene
-	float X: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x2D24; 				//find ^ and then go to around 2D24 on final offset and look around as float
-	float Y: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x2D28; 				//""
-	float Z: "engine_x64_rwdi.dll", 0x1DB0058, 0x720, 0x30, 0x2D2C; 				//""
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x32C6; 		//200 menu, 28 in game, 32 cutscene
+	float X: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x2D24; 				//find ^ and then go to around 2D24 on final offset and look around as float
+	float Y: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x2D28; 				//""
+	float Z: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x2D2C; 				//""
 	byte blackscreenNew: "engine_x64_rwdi.dll", 0x21E5E30, 0x0, 0x208, 0x4;			//158 no blackscreen, 65 blackscreen
 	byte Loading: "engine_x64_rwdi.dll", 0x203BC10, 0x1200, 0x8, 0x0, 0x8;			//2 in loading screen, 8 no loading
 	byte menuState: "engine_x64_rwdi.dll", 0x2027CA0, 0x910;						//6 in game, 8 in main menu/shop. Sometimes goes to 7 when loading shop
@@ -401,7 +401,7 @@ init
 
 update
 {
-	print(modules.First().ModuleMemorySize.ToString());
+	//print(modules.First().ModuleMemorySize.ToString());
 	
     if (timer.CurrentPhase == TimerPhase.NotRunning)
     {
