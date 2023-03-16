@@ -1,4 +1,4 @@
-// Dying Light 2 Autosplitter v1.5.0 (11/01/2023)
+// Dying Light 2 Autosplitter v1.9.3 (16/03/2023)
 // Removes load times from loading screens, main menu and when the game is paused on single player
 // Main Script & Pointers by TheDementedSalad
 // Quest ID found by Ero (Huge Thanks o7)
@@ -64,21 +64,35 @@ state("DyingLightGame_x64_rwdi", "1.4.0")
 
 state("DyingLightGame_x64_rwdi", "1.8.3") 
 { 
-	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x32C6; 		//200 menu, 28 in game, 32 cutscene
-	float X: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x2D24; 				//find ^ and then go to around 2D24 on final offset and look around as float
-	float Y: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x2D28; 				//""
-	float Z: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x2D2C; 				//""
-	byte blackscreenNew: "engine_x64_rwdi.dll", 0x21E5E30, 0x0, 0x208, 0x4;			//158 no blackscreen, 65 blackscreen
-	byte Loading: "engine_x64_rwdi.dll", 0x203BC10, 0x1200, 0x8, 0x0, 0x8;			//2 in loading screen, 8 no loading
-	byte menuState: "engine_x64_rwdi.dll", 0x2027CA0, 0x910;						//6 in game, 8 in main menu/shop. Sometimes goes to 7 when loading shop
-	byte Shop: "engine_x64_rwdi.dll", 0x2027CA0, 0x91C;								//find menuState then look nearby for 0 in game
-	long QuestID: "engine_x64_rwdi.dll", 0x2027CA0, 0x838, 0x280, 0x40, 0x8, 0x8;   //same base address as Shop & same offsets
-	long DialogueID: "engine_x64_rwdi.dll", 0x2027CA0, 0xF28, 0x20, 0x8;			//6935734554263853647 at the beginning when it says 2036, then search for 6935736001417070820 when character is on screen running
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x32C6;
+	float X: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x2D24;
+	float Y: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x2D28;
+	float Z: "engine_x64_rwdi.dll", 0x1E037F8, 0x720, 0x10, 0x2D2C;
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x21E5E30, 0x0, 0x208, 0x4;
+	byte Loading: "engine_x64_rwdi.dll", 0x203BC10, 0x1200, 0x8, 0x0, 0x8;
+	byte menuState: "engine_x64_rwdi.dll", 0x2027CA0, 0x910;
+	byte Shop: "engine_x64_rwdi.dll", 0x2027CA0, 0x91C;
+	long QuestID: "engine_x64_rwdi.dll", 0x2027CA0, 0x838, 0x280, 0x40, 0x8, 0x8;
+	long DialogueID: "engine_x64_rwdi.dll", 0x2027CA0, 0xF28, 0x20, 0x8;
+} 
+
+state("DyingLightGame_x64_rwdi", "1.9.3") 
+{ 
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1E30858, 0x720, 0x10, 0x3306; 		//200 menu, 28 in game, 32 cutscene
+	float X: "engine_x64_rwdi.dll", 0x1E30858, 0x720, 0x10, 0x2DFC; 				//find ^ and then go to around 2D24 on final offset and look around as float
+	float Y: "engine_x64_rwdi.dll", 0x1E30858, 0x720, 0x10, 0x2E00; 				//""
+	float Z: "engine_x64_rwdi.dll", 0x1E30858, 0x720, 0x10, 0x2E04; 				//""
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x22197A0, 0x0, 0x208, 0x4;			//158 no blackscreen, 65 blackscreen
+	byte Loading: "engine_x64_rwdi.dll", 0x2069678, 0x1200, 0x8, 0x0, 0x8;			//2 in loading screen, 8 no loading
+	byte menuState: "engine_x64_rwdi.dll", 0x2054938, 0x918;						//6 in game, 8 in main menu/shop. Sometimes goes to 7 when loading shop
+	byte Shop: "engine_x64_rwdi.dll", 0x2054938, 0x924;								//find menuState then look nearby for 0 in game
+	long QuestID: "engine_x64_rwdi.dll", 0x22054938, 0x840, 0x280, 0x40, 0x8, 0x8;   //same base address as Shop & same offsets
+	long DialogueID: "engine_x64_rwdi.dll", 0x2054938, 0xF30, 0x20, 0x8;			//6935734554263853647 at the beginning when it says 2036, then search for 6935736001417070820 when character is on screen running
 } 
 
 startup
 {
-	vars.ASLVersion = "ASL Version 1.5.0 - 11/01/23";
+	vars.ASLVersion = "ASL Version v1.9.3 - 16/03/2023";
 	settings.Add(vars.ASLVersion, false);
 	settings.Add("Category", true, "NG or NG+");
 	settings.Add("NG", false, "New Game", "Category");
@@ -395,6 +409,9 @@ init
 			break;
 		case 2076672:
 			version = "1.8.3";
+			break;
+		case 2256896:
+			version = "1.9.3";
 			break;
 	}
 }
