@@ -429,7 +429,7 @@ update
 start 
 {
 	if(settings ["NG"]){
-	return current.blackscreenNew == 158 && current.menuCutsStart == 28 && current.X >= 590f && current.X <= 595f;
+	current.QuestID == 6418103557892807278 && old.QuestID != 6418103557892807278;
 	}
 	
 	if(settings ["NG+"]){
