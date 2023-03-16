@@ -429,7 +429,7 @@ update
 start 
 {
 	if(settings ["NG"]){
-	current.QuestID == 6418103557892807278 && old.QuestID != 6418103557892807278;
+	return current.QuestID == 6418103557892807278 && old.QuestID != 6418103557892807278;
 	}
 	
 	if(settings ["NG+"]){
