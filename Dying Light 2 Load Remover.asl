@@ -86,7 +86,7 @@ state("DyingLightGame_x64_rwdi", "1.9.3")
 	byte Loading: "engine_x64_rwdi.dll", 0x2069678, 0x1200, 0x8, 0x0, 0x8;			//2 in loading screen, 8 no loading
 	byte menuState: "engine_x64_rwdi.dll", 0x2054938, 0x918;						//6 in game, 8 in main menu/shop. Sometimes goes to 7 when loading shop
 	byte Shop: "engine_x64_rwdi.dll", 0x2054938, 0x924;								//find menuState then look nearby for 0 in game
-	long QuestID: "engine_x64_rwdi.dll", 0x22054938, 0x840, 0x280, 0x40, 0x8, 0x8;   //same base address as Shop & same offsets
+	long QuestID: "engine_x64_rwdi.dll", 0x2054938, 0x840, 0x280, 0x40, 0x8, 0x8;   //same base address as Shop & same offsets
 	long DialogueID: "engine_x64_rwdi.dll", 0x2054938, 0xF30, 0x20, 0x8;			//6935734554263853647 at the beginning when it says 2036, then search for 6935736001417070820 when character is on screen running
 } 
 
