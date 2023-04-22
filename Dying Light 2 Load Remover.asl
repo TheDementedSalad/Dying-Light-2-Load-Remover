@@ -96,8 +96,8 @@ state("DyingLightGame_x64_rwdi", "1.10.1")
 	float X: "engine_x64_rwdi.dll", 0x1E3FA28, 0x720, 0x10, 0x2DF8; 				//find ^ and then go to around 2D24 on final offset and look around as float
 	float Y: "engine_x64_rwdi.dll", 0x1E3FA28, 0x720, 0x10, 0x2DFC; 				//""
 	float Z: "engine_x64_rwdi.dll", 0x1E3FA28, 0x720, 0x10, 0x2E00; 				//""
-	byte blackscreenNew: "engine_x64_rwdi.dll", 0x2EDB50, 0x0, 0x208, 0x4;			//158 no blackscreen, 65 blackscreen
-	byte Loading: "engine_x64_rwdi.dll", 0x1E47A88, 0x1F0, 0x8, 0x0, 0x8;			//2 in loading screen, 8 no loading
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x22EDB50, 0x0, 0x208, 0x4;			//158 no blackscreen, 65 blackscreen
+	byte Loading: "engine_x64_rwdi.dll", 0x2133158, 0x1F0, 0x8, 0x0, 0x8;			//2 in loading screen, 8 no loading
 	byte menuState: "engine_x64_rwdi.dll", 0x211EA10, 0x928;						//6 in game, 8 in main menu/shop. Sometimes goes to 7 when loading shop
 	byte Shop: "engine_x64_rwdi.dll", 0x211EA10, 0x934;								//find menuState then look nearby for 0 in game
 	long QuestID: "engine_x64_rwdi.dll", 0x211EA10, 0x850, 0x280, 0x40, 0x8, 0x8;   //same base address as Shop & same offsets
