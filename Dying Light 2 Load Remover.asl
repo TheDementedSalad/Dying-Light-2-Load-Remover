@@ -1,6 +1,7 @@
 // Dying Light 2 Autosplitter v1.10.1 (22/04/2023)
 // Removes load times from loading screens, main menu and when the game is paused on single player
 // Main Script & Pointers by TheDementedSalad
+// 1.10.2 pointers by BabyRapZero
 // Quest ID found by Ero (Huge Thanks o7)
 
 //Special thanks to SpiceeTV, 7rayD and AvuKamu for being my lab rats and testing
@@ -104,10 +105,24 @@ state("DyingLightGame_x64_rwdi", "1.10.1")
 	long DialogueID: "engine_x64_rwdi.dll", 0x211EA10, 0xF58, 0x20, 0x8;			//6935734554263853647 at the beginning when it says 2036, then search for 6935736001417070820 when character is on screen running
 } 
 
-
+state("DyingLightGame_x64_rwdi", "1.10.2")
+{ 
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1E3EA28, 0x720, 0x10, 0x3382; 		
+	float X: "engine_x64_rwdi.dll", 0x1E3EA28, 0x720, 0x10, 0x2DF8; 				
+	float Y: "engine_x64_rwdi.dll", 0x1E3EA28, 0x720, 0x10, 0x2DFC; 				
+	float Z: "engine_x64_rwdi.dll", 0x1E3EA28, 0x720, 0x10, 0x2E00; 				
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x22ECBC0, 0x0, 0x208, 0x4;			
+	byte Loading: "engine_x64_rwdi.dll", 0x1E46A88, 0x1F0, 0x8, 0x0, 0x8;			
+	byte menuState: "engine_x64_rwdi.dll", 0x211DA80, 0x928;						
+	byte Shop: "engine_x64_rwdi.dll", 0x211DA80, 0x934;								
+	long QuestID: "engine_x64_rwdi.dll", 0x211DA80, 0x850, 0x280, 0x40, 0x8, 0x8;   
+	long DialogueID: "engine_x64_rwdi.dll", 0x211DA80, 0xF58, 0x20, 0x8;			
+} 
 
 startup
 {
+	Assembly.Load(File.ReadAllBytes("Components/asl-help")).CreateInstance("Basic");
+	
 	vars.ASLVersion = "ASL Version v1.10.1 - 22/04/2023";
 	settings.Add(vars.ASLVersion, false);
 	settings.Add("Category", true, "NG or NG+");
@@ -410,29 +425,47 @@ startup
 init
 {
 	vars.completedSplits = new List<string>();
-	
-	int gmSize = modules.First().ModuleMemorySize;
-	switch (gmSize) {
-		case 1998848:
-			version = "1.0.5-1.0.6";
-			break;
-		case 2011136:
-			version = "1.2.0-1.2.1";
-			break;
-		case 2019328:
-			version = "1.3.0";
+
+	string md5 = "";
+    try {
+        md5 = (string)vars.Helper.GetMD5Hash();
+    } catch {
+        // Failed to open file for MD5 computation.
+    }
+
+    switch (md5) {
+        // Latest Steam updates that share same MemorySize
+		case "000B2279C2055F0347D02B8D8981C2D1":
 			version = "1.4.0";
 			break;
-		case 2076672:
-			version = "1.8.3";
-			break;
-		case 2256896:
-			version = "1.9.3";
-			break;
-		case 2318336:
-			version = "1.10.1";
-			break;
-	}
+        case "000B2279C2055F0347D02B8D8981C2D9":
+            version = "1.10.2";
+            break;
+        default:
+           
+		// No version found with hash, fallback to memorySize
+        switch ((int)vars.Helper.GetMemorySize()) {
+            case 1998848:
+				version = "1.0.5-1.0.6";
+				break;
+			case 2011136:
+				version = "1.2.0-1.2.1";
+				break;
+			case 2019328:
+				version = "1.3.0";
+				break;
+			case 2076672:
+				version = "1.8.3";
+				break;
+			case 2256896:
+				version = "1.9.3";
+				break;
+			case 2318336:
+				version = "1.10.1";
+				break;
+        }
+        break;
+    }
 }
 
 update
