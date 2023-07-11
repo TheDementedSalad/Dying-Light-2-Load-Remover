@@ -1,7 +1,7 @@
-// Dying Light 2 Autosplitter v1.10.1 (22/04/2023)
+// Dying Light 2 Autosplitter v1.11.3 (11/07/2023)
 // Removes load times from loading screens, main menu and when the game is paused on single player
 // Main Script & Pointers by TheDementedSalad
-// 1.10.2 pointers by BabyRapZero
+// 1.10.2, 1.10.3 & 1.11.3 pointers by BabyRapZero
 // Quest ID found by Ero (Huge Thanks o7)
 
 //Special thanks to SpiceeTV, 7rayD and AvuKamu for being my lab rats and testing
@@ -117,7 +117,35 @@ state("DyingLightGame_x64_rwdi", "1.10.2")
 	byte Shop: "engine_x64_rwdi.dll", 0x211DA80, 0x934;								
 	long QuestID: "engine_x64_rwdi.dll", 0x211DA80, 0x850, 0x280, 0x40, 0x8, 0x8;   
 	long DialogueID: "engine_x64_rwdi.dll", 0x211DA80, 0xF58, 0x20, 0x8;			
-} 
+}
+
+state("DyingLightGame_x64_rwdi", "1.10.3")
+{ 
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x1E3DA28, 0x720, 0x10, 0x3382; 		
+	float X: "engine_x64_rwdi.dll", 0x1E3DA28, 0x720, 0x10, 0x2DF8; 				
+	float Y: "engine_x64_rwdi.dll", 0x1E3DA28, 0x720, 0x10, 0x2DFC; 				
+	float Z: "engine_x64_rwdi.dll", 0x1E3DA28, 0x720, 0x10, 0x2E00; 				
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x22EBBC0, 0x0, 0x208, 0x4;			
+	byte Loading: "engine_x64_rwdi.dll", 0x1E45A88, 0x1F0, 0x8, 0x0, 0x8;			
+	byte menuState: "engine_x64_rwdi.dll", 0x211CA80, 0x928;						
+	byte Shop: "engine_x64_rwdi.dll", 0x211CA80, 0x934;								
+	long QuestID: "engine_x64_rwdi.dll", 0x211CA80, 0x850, 0x280, 0x40, 0x8, 0x8;   
+	long DialogueID: "engine_x64_rwdi.dll", 0x211CA80, 0xF58, 0x20, 0x8;	
+}
+
+state("DyingLightGame_x64_rwdi", "1.11.3")
+{ 
+	byte menuCutsStart: "engine_x64_rwdi.dll", 0x219F228, 0x720, 0x10, 0x33AA; 		
+	float X: "engine_x64_rwdi.dll", 0x219F228, 0x720, 0x10, 0x2E08; 				
+	float Y: "engine_x64_rwdi.dll", 0x219F228, 0x720, 0x10, 0x2E0C; 				
+	float Z: "engine_x64_rwdi.dll", 0x219F228, 0x720, 0x10, 0x2E10; 				
+	byte blackscreenNew: "engine_x64_rwdi.dll", 0x230BF60, 0x0, 0x208, 0x34;			
+	byte Loading: "engine_x64_rwdi.dll", 0x21A7288, 0x1F0, 0x8, 0x0, 0x8;			
+	byte menuState: "engine_x64_rwdi.dll", 0x2156828, 0x938;						
+	byte Shop: "engine_x64_rwdi.dll", 0x2156828, 0x944;								
+	long QuestID: "engine_x64_rwdi.dll", 0x2156828, 0x860, 0x280, 0x40, 0x8, 0x8;   
+	long DialogueID: "engine_x64_rwdi.dll", 0x2156828, 0xF68, 0x20, 0x8;		
+}
 
 startup
 {
@@ -441,6 +469,12 @@ init
         case "000B2279C2055F0347D02B8D8981C2D9":
             version = "1.10.2";
             break;
+		case "FDF46508B6EC7CE6EA9986BC13E1F470":
+			version = "1.10.3";
+			break;
+		case "F5BFDD269A537F2EDB4F4F59E5AF2599":
+			version = "1.11.3";
+			break;	
         default:
            
 		// No version found with hash, fallback to memorySize
