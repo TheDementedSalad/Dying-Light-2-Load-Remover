@@ -1,0 +1,293 @@
+<Settings>
+	<Setting Id="Category"  Label="NG or NG+" State="false">
+		<Setting Id="NG" Label="New Game" State="false"/>
+		<Setting Id="NG+" Label="New Game Plus" State="false"/>
+	</Setting>
+    <Setting Id="Splits"  Label="List of Splits" State="false">
+		<Setting Id="Pilgrim" Label="Pilgrim's Path" State="false">
+			<Setting Id="6935736438940396261" Label="Spike Catches You" State="false"/>
+			<Setting Id="6955779402475474343" Label="Did Spike Skip His Lines?" State="false"/>
+			<Setting Id="6961324886743747933" Label="Spike Opens the Gate" State="false"/>
+			<Setting Id="6950631123466199982" Label="See the Rats" State="false"/>
+			<Setting Id="6950633928245030047" Label="Open the Double Doors" State="false"/>
+			<Setting Id="6950635249820691247" Label="Look at the Picture" State="false"/>
+			<Setting Id="6935737825684148760" Label="Have a Drink With Spike" State="false"/>
+			<Setting Id="6959503313781553921" Label="Eugh, Biters" State="false"/>
+			<Setting Id="MistyPark" Label="Bottom of Misty Mountain Climb" State="false"/>
+			<Setting Id="6956496709085682889" Label="Reach the Motel" State="false"/>
+			<Setting Id="6991803159886828128" Label="Killed Banshee" State="false"/>
+			<Setting Id="6956515670732469708" Label="Call Informant After Waking Up" State="false"/>
+			<Setting Id="6935745780863265659" Label="Call Informant After Swimming" State="false"/>
+			<Setting Id="6935747558900041453" Label="Call Informant In Tunnel" State="false"/>
+			<Setting Id="6950872432433566814" Label="Bit By Volatile" State="false"/>
+			<Setting Id="6959515562990857547" Label="Finding Informant Beaten Up" State="false"/>
+			<Setting Id="6950982873346619016" Label="Checking on Informant" State="false"/>
+			<Setting Id="6935757995315861215" Label="Escape the Renegades" State="false"/>
+			<Setting Id="6959523380287154457" Label="Damn, That Hurts" State="false"/>
+			<Setting Id="6586995861741614531" Label="PILGRIM'S PATH END" State="false"/>
+		</Setting>
+		<Setting Id="Strong" Label="Getting Stronger" State="false">
+			<Setting Id="6936133018867755656" Label="Hakon Knows the Move" State="false"/>
+			<Setting Id="6861114474711331788" Label="Grabbed Crystal" State="false"/>
+			<Setting Id="6929440313876199830" Label="Meet the PK's" State="false"/>
+			<Setting Id="6792922744968405179" Label="Reach GRE Crate" State="false"/>
+			<Setting Id="6792922376917220763" Label="Denied at the Bazaar" State="false"/>
+			<Setting Id="6850400084937621414" Label="Reach Cillians" State="false"/>
+			<Setting Id="6586995703058443329" Label="GETTING STRONGER END" State="false"/>
+		</Setting>
+		<Setting Id="Marker" Label="Markers of Plague" State="false">
+			<Setting Id="6886765242681724036" Label="Met Hakon at Hospital" State="false"/>
+			<Setting Id="6888752120353466355" Label="Lockpick the Door" State="false"/>
+			<Setting Id="6864802055122228815" Label="Flashbacks" State="false"/>
+			<Setting Id="6755464768408493935" Label="Reach Stealth Section" State="false"/>
+			<Setting Id="6751285997867603032" Label="Could Hakon BE Any Slower" State="false"/>
+			<Setting Id="6751286002541830187" Label="Reach Elevator" State="false"/>
+			<Setting Id="6789180837785206582" Label="See Volatile" State="false"/>
+			<Setting Id="6863785742662639256" Label="Inject First Inhib" State="false"/>
+			<Setting Id="6751285997256594844" Label="Recieve Biomarkers" State="false"/>
+			<Setting Id="6792922770922209812" Label="Escape Hospital" State="false"/>
+			<Setting Id="6951739946446564163" Label="Binoculars Tutorial" State="false"/>
+			<Setting Id="6586997102680853885" Label="MARKERS OF PLAGUE END" State="false"/>
+		</Setting>
+		<Setting Id="WayOut" Label="The Only Way Out" State="false">
+			<Setting Id="6919466785342882821" Label="Reach The Bazaar" State="false"/>
+			<Setting Id="6965819209827745994" Label="Finish Spark of Invention" State="false"/>
+			<Setting Id="6888625767760758182" Label="Begin All In The Family" State="false"/>
+			<Setting Id="6888626900658414115" Label="Finish All In The Family" State="false"/>
+			<Setting Id="6929823893118467595" Label="Speak to Hakon before Tunnel" State="false"/>
+			<Setting Id="6952028081988680691" Label="Entered Tunnel" State="false"/>
+			<Setting Id="6969151351981770375" Label="Meet Spitter" State="false"/>
+			<Setting Id="6929825434093921368" Label="Meet Aitor" State="false"/>
+			<Setting Id="6929829041976656692" Label="Talk to Hakon Outside PK Base" State="false"/>
+			<Setting Id="6929831297360563601" Label="Speak to Benny" State="false"/>
+			<Setting Id="6952032361503677066" Label="Where is Hubert?" State="false"/>
+			<Setting Id="6929833697361394510" Label="Confront Hubert" State="false"/>
+			<Setting Id="6929840761954460629" Label="Obtain Lazarus" State="false"/>
+			<Setting Id="6929837541817257720" Label="Give Lazarus to Aitor" State="false"/>
+			<Setting Id="6929838880738728535" Label="Talk to Hakon" State="false"/>
+			<Setting Id="6849232219065612999" Label="Trying to get into Bazaar" State="false"/>
+			<Setting Id="6763910963472150144" Label="Meet Sophie" State="false"/>
+			<Setting Id="6929775083912986139" Label="Alberto's Massive...what" State="false"/>
+			<Setting Id="6631466094824427058" Label="THE ONLY WAY OUT END" State="false"/>
+		</Setting>
+		<Setting Id="Unruly" Label="Unruly Brother" State="false">
+			<Setting Id="6818044262152623331" Label="Don't Help Donald" State="false"/>
+			<Setting Id="6846304903466059266" Label="Reach Barney" State="false"/>
+			<Setting Id="6846309392289132487" Label="Back to Barney After Combat" State="false"/>
+			<Setting Id="6929783172367756961" Label="Reach Birdie" State="false"/>
+			<Setting Id="6929786087399886132" Label="Confront Barnie" State="false"/>
+			<Setting Id="6941072862062894380" Label="UNRULY BROTHER END" State="false"/>
+		</Setting>
+		<Setting Id="Arrive" Label="The Arrival" State="false">
+			<Setting Id="6941372377051524095" Label="See the Bandits" State="false"/>
+			<Setting Id="6885725039829264560" Label="Talk To Suzie" State="false"/>
+			<Setting Id="6846316259623390006" Label="Looted All Bodies" State="false"/>
+			<Setting Id="6764266303857422847" Label="THE ARRIVAL END" State="false"/>
+		</Setting>
+		<Setting Id="Raid" Label="The Raid" State="false">
+			<Setting Id="6929788633964978330" Label="Talk to Aitor" State="false"/>
+			<Setting Id="6929792385176768080" Label="Talk to Sophie" State="false"/>
+			<Setting Id="6867085135245014083" Label="Spy on Bandit Camp" State="false"/>
+			<Setting Id="6891232327643746418" Label="Raid Start" State="false"/>
+			<Setting Id="6846321662880425607" Label="Free Carl" State="false"/>
+			<Setting Id="6929794707812379180" Label="Go to Aitor or Sophie" State="false"/>
+			<Setting Id="6524327801237491574" Label="THE RAID END" State="false"/>
+		</Setting>
+		<Setting Id="Water" Label="Water Tower" State="false">
+			<Setting Id="6989956221651356487" Label="Talk to Aitor" State="false"/>
+			<Setting Id="6989961015349673951" Label="Talk to Sophie" State="false"/>
+			<Setting Id="6751648762721161857" Label="Spy on Bandit Camp" State="false"/>
+			<Setting Id="6929803722500973811" Label="Raid Start" State="false"/>
+			<Setting Id="6929815864164397451" Label="Free Carl" State="false"/>
+			<Setting Id="6719774613488049961" Label="Go to Aitor or Sophie" State="false"/>
+		</Setting>
+		<Setting Id="Dark" Label="Into the Dark" State="false">
+			<Setting Id="6943882498136884743" Label="Talk to Guard Outside Tunnel" State="false"/>
+			<Setting Id="6943890248699503849" Label="Hakon Autoscroller" State="false"/>
+			<Setting Id="6943891834879873699" Label="Go Turn on Ventilation" State="false"/>
+			<Setting Id="6943892401648377480" Label="Didn't Work" State="false"/>
+			<Setting Id="6943892800171465043" Label="Turned on Ventilation" State="false"/>
+			<Setting Id="6943893212778987801" Label="Return to Hakon" State="false"/>
+			<Setting Id="6943895428704522284" Label="Begin Holdout" State="false"/>
+			<Setting Id="6943913888719855236" Label="Andersion Asks If You're There" State="false"/>
+			<Setting Id="6943915947269204397" Label="Anderson Gives You Booster" State="false"/>
+			<Setting Id="6943917517562921880" Label="Anderson Is Back" State="false"/>
+			<Setting Id="6943918059936933879" Label="Anderson Gives You A Bomb" State="false"/>
+			<Setting Id="6949085210351180222" Label="Captured By Barney" State="false"/>
+			<Setting Id="6949085962292918003" Label="Killed Barney" State="false"/>
+			<Setting Id="6719777300904351619" Label="INTO THE DARK END" State="false"/>
+		</Setting>
+		<Setting Id="Waltz" Label="Let's Waltz" State="false">
+			<Setting Id="6940984541482425355" Label="Did Aitor Know About Waltz?" State="false"/>
+			<Setting Id="6842563699713012588" Label="Inside Tunnel" State="false"/>
+			<Setting Id="6969169391602115749" Label="Try to Turn on Generator" State="false"/>
+			<Setting Id="6758718579255451704" Label="Actually Turn on Generator" State="false"/>
+			<Setting Id="6992075547817140805" Label="Who Could Have Come Through Here?" State="false"/>
+			<Setting Id="6798494160180462495" Label="Find Waltz In Tunnel" State="false"/>
+			<Setting Id="6943546733447113732" Label="Wake Up Outside Tunnel" State="false"/>
+			<Setting Id="6792922887736249818" Label="Begin Waltz Escape" State="false"/>
+			<Setting Id="6852666377449833253" Label="Into Train Station" State="false"/>
+			<Setting Id="6842579087644024008" Label="Escaped Waltz" State="false"/>
+			<Setting Id="6872665544743326340" Label="Talk to Lawan" State="false"/>
+			<Setting Id="6725682675157433682" Label="LET'S WALTZ END" State="false"/>
+		</Setting>
+		<Setting Id="Home" Label="A Place to Call Home" State="false">
+			<Setting Id="6930909243162029452" Label="Follow Lawan to the Roof" State="false"/>
+			<Setting Id="6900881585858749967" Label="Start Paraglider 1 Tutorial" State="false"/>
+			<Setting Id="6930913722254414155" Label="Start Paraglider 2 Tutorial" State="false"/>
+			<Setting Id="6930914209333513828" Label="Start Paraglider 3 Tutorial" State="false"/>
+			<Setting Id="6937993453530942671" Label="Finish Paraglider Tutorial" State="false"/>
+			<Setting Id="6940231143339199498" Label="Can This Paraglider Be Faster" State="false"/>
+			<Setting Id="6854112312749174543" Label="Begin Combat With Renegades" State="false"/>
+			<Setting Id="6854126562269066615" Label="Finish Combat With Renegades" State="false"/>
+			<Setting Id="6854802964507014265" Label="Enter Downtown Electrical Station" State="false"/>
+			<Setting Id="6937998923994718360" Label="Activated Elevator" State="false"/>
+			<Setting Id="6854132201099938387" Label="Give PK's Downtown Electrical Station" State="false"/>
+			<Setting Id="6967246031831914816" Label="Imagine, Power For The Entire City" State="false"/>
+			<Setting Id="6930915193008823056" Label="Enter Fish Eye" State="false"/>
+			<Setting Id="6930917094416497719" Label="At the Bar" State="false"/>
+			<Setting Id="6932089074461311043" Label="Meet Frank" State="false"/>
+			<Setting Id="6963614067404065739" Label="Go Diffuse Cannon" State="false"/>
+			<Setting Id="6963614509502051199" Label="More Enemies Lower Level" State="false"/>
+			<Setting Id="6964357684233391052" Label="Diffused 2nd Cannon" State="false"/>
+			<Setting Id="6963615411121163892" Label="Diffused 3rd Cannon" State="false"/>
+			<Setting Id="6786968470164355614" Label="A PLACE TO CALL HOME END" State="false"/>
+		</Setting>
+		<Setting Id="Elec2" Label="Garrison Electrical Tower" State="false">
+			<Setting Id="Elec2Start" Label="Enter Garrison Electric Station" State="false"/>
+			<Setting Id="Elec2fin" Label="Finish Garrison Electric Station" State="false"/>
+		</Setting>
+		<Setting Id="Sunken" Label="Sunken Treasure" State="false">
+			<Setting Id="SunkReach" Label="Reached Sunken Treasure" State="false"/>
+		</Setting>
+		<Setting Id="Metros" Label="Metro Stations" State="false">
+			<Setting Id="FishStart" Label="Enter Fish Eye Metro" State="false"/>
+			<Setting Id="FishFin" Label="Finish Fish Eye Metro" State="false"/>
+			<Setting Id="MetroEnt" Label="Enter Garrison Metro" State="false"/>
+			<Setting Id="MetroFin" Label="Finish Garrison Metro" State="false"/>
+		</Setting>
+		<Setting Id="Orders" Label="Orders" State="false">
+			<Setting Id="6934673331842599385" Label="Speak To Lawan" State="false"/>
+			<Setting Id="6786989399222930648" Label="Speak To Grady" State="false"/>
+			<Setting Id="6786994287055120365" Label="Speak To Mateo 1" State="false"/>
+			<Setting Id="6934700140794436804" Label="Speak To Mateo 2" State="false"/>
+			<Setting Id="6934709451601583510" Label="Find Rowe" State="false"/>
+			<Setting Id="6984683066173098584" Label="ORDERS END" State="false"/>
+		</Setting>
+		<Setting Id="Observatory" Label="Observatory" State="false">
+			<Setting Id="6934683012841928905" Label="Jack Matt Call" State="false"/>
+			<Setting Id="6984684398903732155" Label="OBSERVATORY END" State="false"/>
+		</Setting>
+		<Setting Id="Welcome" Label="Welcome On Board" State="false">
+			<Setting Id="6782112217855025416" Label="Reach the Boat" State="false"/>
+			<Setting Id="6826692286826942476" Label="Talk to Jack Matt" State="false"/>
+			<Setting Id="6937205857860768910" Label="Go to Juans house" State="false"/>
+			<Setting Id="6937207417864034544" Label="Meet Juan at Fish Eye" State="false"/>
+			<Setting Id="6937252112211993570" Label="Go to Lawans" State="false"/>
+			<Setting Id="ArtAp" Label="Enter Art Dealers Apartment" State="false"/>
+			<Setting Id="6937212576892709177" Label="Find Art Dealers Body" State="false"/>
+			<Setting Id="BoardEnd" Label="WELCOME ON BOARD END" State="false"/>
+		</Setting>
+		<Setting Id="Light" Label="The Lost Light" State="false">
+			<Setting Id="6943247357780964709" Label="Finish Wrecking Ball" State="false"/>
+			<Setting Id="6844089232900545153" Label="Meet Demoulin" State="false"/>
+			<Setting Id="6902757557492661369" Label="Check Body 2" State="false"/>
+			<Setting Id="6787735280624216650" Label="Speak to Survivors" State="false"/>
+			<Setting Id="6906872893416984141" Label="Knocked Out by Wrecking Ball" State="false"/>
+			<Setting Id="6825960832947123794" Label="Retrieve UV Lamps" State="false"/>
+			<Setting Id="6779627417734707475" Label="THE LOST LIGHT END" State="false"/>
+		</Setting>
+		<Setting Id="Broadcast" Label="Broadcast" State="false">
+			<Setting Id="6938347014034918733" Label="Jacks Call on the Boat" State="false"/>
+			<Setting Id="6938742847233756566" Label="Planning The Tower" State="false"/>
+			<Setting Id="6921638229521064970" Label="Speak to Lawan Before Tower" State="false"/>
+			<Setting Id="6792922479614608680" Label="Meet Rowe in the Tower" State="false"/>
+			<Setting Id="6921645020787467377" Label="Meet Leon" State="false"/>
+			<Setting Id="6921649207757338208" Label="Restore Power" State="false"/>
+			<Setting Id="6792930725809135490" Label="Begin Combat With Renegades" State="false"/>
+			<Setting Id="6877846044033492501" Label="Everything Goes Wrong" State="false"/>
+			<Setting Id="6921662298435869338" Label="Say Goodbye To Rowe" State="false"/>
+			<Setting Id="6877851047096848054" Label="Get Grappling Hook" State="false"/>
+			<Setting Id="6877851377825561047" Label="Reach Outside" State="false"/>
+			<Setting Id="6921665482628994005" Label="Reach Bottom of Tower Climb" State="false"/>
+			<Setting Id="6951040695683782854" Label="Get Flamed by Frank" State="false"/>
+			<Setting Id="6951041782107291259" Label="New Radio Hope" State="false"/>
+			<Setting Id="6951042477725412817" Label="Frank Had A Solid Plan" State="false"/>
+			<Setting Id="6877852958904137946" Label="Give Control to Matt/Frank" State="false"/>
+			<Setting Id="6949121008916742189" Label="BROADCAST END" State="false"/>
+		</Setting>
+		<Setting Id="Shoe" Label="The Shoe" State="false">
+			<Setting Id="6949072789469898440" Label="Meet Lawan Outside Her Apartment" State="false"/>
+			<Setting Id="6949073874748307240" Label="Enter Apartment" State="false"/>
+			<Setting Id="6949074185203312455" Label="Find Picture" State="false"/>
+			<Setting Id="6949075335827864061" Label="Find Shoes" State="false"/>
+			<Setting Id="6949076654408927074" Label="Meet Lawan on Rooftop" State="false"/>
+			<Setting Id="ShoeEnd" Label="THE SHOE END" State="false"/>
+		</Setting>
+		<Setting Id="Empire" Label="Empire" State="false">
+			<Setting Id="6950562180479382846" Label="Aiden Calls Lawan on Boat" State="false"/>
+			<Setting Id="6836253812468089259" Label="Meet Jack on Boat" State="false"/>
+			<Setting Id="6961700032206838300" Label="Franks Call to Aiden" State="false"/>
+			<Setting Id="6836255389275975496" Label="Activate First Antenna" State="false"/>
+			<Setting Id="6919758564274124049" Label="Disabled Cannon" State="false"/>
+			<Setting Id="6871283625070616617" Label="Activate Second Antenna" State="false"/>
+			<Setting Id="6919758103924711922" Label="Disabled Both Cannons" State="false"/>
+			<Setting Id="6725778646519233855" Label="EMPIRE END" State="false"/>
+		</Setting>
+		<Setting Id="Veronika" Label="Veronika" State="false">
+			<Setting Id="6991449492800666796" Label="Speak to Sophie At Bazaar" State="false"/>
+			<Setting Id="VerBuild" Label="Enter The Building" State="false"/>
+			<Setting Id="6991478174385769039" Label="Speak to Vincenzo" State="false"/>
+			<Setting Id="7039703436298482826" Label="Need to find Dr Ryan" State="false"/>
+			<Setting Id="6782143292365090878" Label="Meet Veronika" State="false"/>
+			<Setting Id="6981835844101308917" Label="Reach First Dome" State="false"/>
+			<Setting Id="6884150521996883829" Label="Reach Second Dome" State="false"/>
+			<Setting Id="6884157407854169211" Label="Turn on Power" State="false"/>
+			<Setting Id="6835843003278968886" Label="Talk To Veronika" State="false"/>
+			<Setting Id="6982131040894055687" Label="Turn the GRE Key" State="false"/>
+			<Setting Id="6965106974872865197" Label="Return to Veronika" State="false"/>
+			<Setting Id="6966896039700209189" Label="Get Blocker" State="false"/>
+			<Setting Id="6920124963615898104" Label="Check on Veronika" State="false"/>
+			<Setting Id="6982164656724953783" Label="Begin Renegade Combat" State="false"/>
+			<Setting Id="6982189448716463802" Label="Finish Renegade Combat" State="false"/>
+			<Setting Id="6797330224537895109" Label="Begin Waltz Escape" State="false"/>
+			<Setting Id="6955769373493964841" Label="Escape Waltz" State="false"/>
+			<Setting Id="6986239164504225373" Label="VERONIKA END" State="false"/>
+		</Setting>
+		<Setting Id="Assassin" Label="Assassination" State="false">
+			<Setting Id="6950617053701170578" Label="Juan Gets Hung" State="false"/>
+			<Setting Id="6950618243477101615" Label="Confront Jack" State="false"/>
+			<Setting Id="6950612340759337646" Label="Meet Lawan at Fish Eye" State="false"/>
+			<Setting Id="6950616838199752778" Label="Stop Lawan" State="false"/>
+			<Setting Id="6838984222336485600" Label="ASSASSINATION END" State="false"/>
+		</Setting>
+		<Setting Id="Never" Label="Now or Never" State="false">
+			<Setting Id="6993271335167613092" Label="Large Renegade Fight" State="false"/>
+			<Setting Id="6805092895580390700" Label="Enter Stronghold" State="false"/>
+			<Setting Id="6950619814970437236" Label="Try to Stop Lawan" State="false"/>
+			<Setting Id="6844404122235799953" Label="Confront The Butcher" State="false"/>
+			<Setting Id="6957254303141313925" Label="Investiage Bed" State="false"/>
+			<Setting Id="6963200732507420772" Label="Cillians Call" State="false"/>
+			<Setting Id="6796674366368284542" Label="NOW OR NEVER END" State="false"/>
+		</Setting>
+		<Setting Id="X13" Label="X13" State="false">
+			<Setting Id="7000696247927709223" Label="Killed PK's" State="false"/>
+			<Setting Id="6994397771519076950" Label="Killed Jack Matt" State="false"/>
+			<Setting Id="6963219234838478176" Label="Reached Door In Volatile Mode" State="false"/>
+			<Setting Id="TunnelEnt" Label="Enter Tunnel" State="false"/>
+			<Setting Id="7000966506933858837" Label="Exiting Cave" State="false"/>
+			<Setting Id="6963222842523160032" Label="Confronted By Lawan" State="false"/>
+			<Setting Id="6963227295121629094" Label="Begin Combat" State="false"/>
+			<Setting Id="6963230872814038156" Label="Finish Combat" State="false"/>
+			<Setting Id="EscVol" Label="Escape Volatiles" State="false"/>
+			<Setting Id="6963247968542008763" Label="Waltz Tormenting Aiden" State="false"/>
+			<Setting Id="6976207285085716418" Label="Aiden Almost Catches Waltz" State="false"/>
+			<Setting Id="6963248653937833880" Label="Begin Waltz 1" State="false"/>
+			<Setting Id="6963249638297881671" Label="Begin Waltz 2" State="false"/>
+			<Setting Id="7000997363420796466" Label="Begin Waltz 3" State="false"/>
+			<Setting Id="6963250046542176073" Label="Begin Waltz 4" State="false"/>
+			<Setting Id="6994758198199493876" Label="Beat Waltz" State="false"/>
+			<Setting Id="6963532338237599348" Label="Save Mia" State="false"/>
+		</Setting>
+	</Setting>
+</Settings>
